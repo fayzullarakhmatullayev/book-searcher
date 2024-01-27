@@ -3,15 +3,14 @@
     <div class="login__block">
       <h2 class="login__block--title">Login</h2>
       <form @submit.prevent="submitHandler" class="login__form">
-        <input
+        <BaseInput
           type="text"
           placeholder="Username"
           maxlength="16"
           v-model="userName"
           @input="validateUsername"
-          class="input"
         />
-        <button class="btn" type="submit">Submit</button>
+        <BaseButton type="submit">Submit</BaseButton>
         <div v-if="usernameError" class="login__form--error">{{ usernameError }}</div>
       </form>
     </div>
@@ -22,6 +21,9 @@
 import { ref } from 'vue'
 import { useAuthStore } from '@/store'
 import { useRouter } from 'vue-router'
+
+import BaseButton from '@/components/BaseButton.vue'
+import BaseInput from '@/components/BaseInput.vue'
 
 const store = useAuthStore()
 const router = useRouter()
@@ -44,7 +46,7 @@ const submitHandler = () => {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .login {
   min-height: 100dvh;
   display: grid;
