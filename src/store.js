@@ -11,10 +11,16 @@ export const useAuthStore = defineStore('auth', () => {
     token.value = payload
   }
 
+  const logout = () => {
+    localStorage.removeItem('token')
+    token.value = null
+  }
+
   return {
     token,
     isAuthenticated,
-    setToken
+    setToken,
+    logout
   }
 })
 
