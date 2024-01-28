@@ -21,7 +21,7 @@ const router = createRouter({
       beforeEnter: authGuard
     },
     {
-      path: '/:name',
+      path: '/book/:bookId',
       name: 'detail',
       component: DetailView,
       beforeEnter: authGuard

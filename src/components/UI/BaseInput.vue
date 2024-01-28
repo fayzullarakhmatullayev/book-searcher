@@ -15,7 +15,7 @@ defineProps({
   }
 })
 
-const emit = defineEmits(['update:value'])
+const emit = defineEmits(['update:modelValue'])
 </script>
 
 <style lang="scss">
@@ -24,6 +24,9 @@ const emit = defineEmits(['update:value'])
   border: 1px solid var(--color-gray);
   padding: 10px 15px;
   border-radius: 8px;
+  display: block;
+  width: 100%;
+  background-color: var(--color-white);
   &:focus {
     border-color: var(--color-primary);
   }
