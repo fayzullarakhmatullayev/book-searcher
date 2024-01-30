@@ -10,8 +10,10 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/store'
+
 import BaseButton from '@/components/UI/BaseButton.vue'
 import LogoutIcon from '@/components/icons/LogoutIcon.vue'
+
 const store = useAuthStore()
 const router = useRouter()
 
